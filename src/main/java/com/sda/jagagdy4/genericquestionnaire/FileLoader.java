@@ -3,6 +3,7 @@ package com.sda.jagagdy4.genericquestionnaire;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sda.jagagdy4.genericquestionnaire.model.Loadable;
+import com.sda.jagagdy4.genericquestionnaire.model.Question;
 import lombok.extern.log4j.Log4j;
 
 import java.io.File;
@@ -10,9 +11,10 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Optional;
 @Log4j
-public class FileLoader<T> {private final ObjectMapper objectMapper = new ObjectMapper();
+public class FileLoader<T> {
+    private final ObjectMapper objectMapper = new ObjectMapper();
     private Class<T> tclass;
-    public FileLoader() {
+    public FileLoader(Class<T> tclass) {
         this.tclass = tclass;
     }
     public Map<Long, T> load() {
@@ -28,5 +30,17 @@ public class FileLoader<T> {private final ObjectMapper objectMapper = new Object
             }
         }
        throw new LoaderException("Unable to load json file.");
+    }
+
+    public void save (Map<Long, T> map){
+        Optional<String> stringOptional = Loadable.getLoadableFilePath(tclass);
+        if (stringOptional.isPresent()) {
+            String path = stringOptional.get();
+            try {
+                objectMapper.writeValue(new File(path), map);
+            } catch (IOException e) {
+                log.error("Error while saving json file: " + path + " : ", e);
+            }
+        }
     }
 }

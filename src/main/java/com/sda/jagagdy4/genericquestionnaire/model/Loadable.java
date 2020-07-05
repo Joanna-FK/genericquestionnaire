@@ -8,7 +8,7 @@ public class Loadable {
     private final static Map<Class<?>, String> MAPPED_FILES = new HashMap<>();
     static {
         MAPPED_FILES.put(Question.class, "pytania.json");
-//        MAPPED_FILES.put(Answers.class, "odpowiedzi.json");
+        MAPPED_FILES.put(Answer.class, "odpowiedzi.json");
     }
     public static Optional<String> getLoadableFilePath(Class<?> tclass){
         return Optional.ofNullable(MAPPED_FILES.get(tclass));
