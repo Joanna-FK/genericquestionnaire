@@ -2,3 +2,8 @@
 2020-07-05 11:57:01,400 [main] INFO  com.sda.jagagdy4.genericquestionnaire.Main  - Pleas enter command [listQuestions]:
 2020-07-05 11:57:18,101 [main] INFO  com.sda.jagagdy4.genericquestionnaire.Main  - Pleas enter command [listQuestions]:
 2020-07-05 12:01:47,742 [main] INFO  com.sda.jagagdy4.genericquestionnaire.Main  - Please enter command [listQuestions]:
+2020-07-05 12:06:56,139 [main] INFO  com.sda.jagagdy4.genericquestionnaire.Main  - Please enter command [listQuestions]:
+2020-07-05 12:07:09,046 [main] INFO  com.sda.jagagdy4.genericquestionnaire.Main  - 1 -> {content=Czy lubisz koty?}
+2020-07-05 12:07:09,047 [main] INFO  com.sda.jagagdy4.genericquestionnaire.Main  - 2 -> {content=Czy lubisz psy?}
+2020-07-05 12:07:09,047 [main] INFO  com.sda.jagagdy4.genericquestionnaire.Main  - Please enter command [listQuestions]:
+2020-07-05 12:07:22,853 [main] INFO  com.sda.jagagdy4.genericquestionnaire.Main  - Please enter command [listQuestions]:
